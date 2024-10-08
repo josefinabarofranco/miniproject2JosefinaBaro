@@ -25,10 +25,20 @@ import matplotlib.pyplot as plt
 
 stars = pd.read_csv('stardata.csv', index_col=0)
 
-acruxStar = stars.loc["Acrux"]
+starData = {
 
-plt.scatter(acruxStar["Distance (ly)"], acruxStar["Temperature (K)"])
-plt.title("Acrux Star Temperature and Distance Changes")
+        "Ross 154" : "gold" ,
+        "Barnard's Star" : "crimson" ,
+        "Wolf 359" : "magenta" ,
+        "Lalande 21185" : "purple"
+}
+
+for starName, color in starData.items():
+    star = stars.loc[starName]
+    plt.scatter(star["Distance (ly)"], star["Radius (R/Ro)"], marker = "*", color = color, label = starName)
+
+plt.title("Changing Radius of Stars Across Distances")
 plt.xlabel("Distance from Earth in Light-Years")
-plt.ylabel("Temperature (K)")
+plt.ylabel("Radius of Star Relative to Sun's Radius")
+plt.legend(fontsize ="small" , loc="upper right")
 plt.show()
