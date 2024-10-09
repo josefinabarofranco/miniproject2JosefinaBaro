@@ -31,7 +31,7 @@ starData = {
         "Barnard's Star" : "crimson" ,
         "Wolf 359" : "magenta" ,
         "Lalande 21185" : "purple"
-}
+        }
 
 for starName, color in starData.items():
     star = stars.loc[starName]
@@ -41,4 +41,14 @@ plt.title("Changing Radius of Stars Across Distances")
 plt.xlabel("Distance from Earth in Light-Years")
 plt.ylabel("Radius of Star Relative to Sun's Radius")
 plt.legend(fontsize ="small" , loc="upper right")
+plt.show()
+
+starClassCounts = stars["Spectral Class"].value_counts()
+
+plt.title("Amount of Stars in Star Classes")
+plt.bar(starClassCounts.index, starClassCounts.values)
+plt.xlabel('Spectral Class')
+plt.ylabel('Count')
+plt.xticks(fontsize = 6 , rotation=90)
+plt.grid(True, axis="y", linestyle = "--", alpha = 0.5)
 plt.show()
