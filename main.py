@@ -4,7 +4,9 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
+os.makedirs("charts", exist_ok=True)
 ##(5/5 points) Initial comments with your name, class and project at the top of your .py file.
 ##(5/5 points) Proper import of packages used.
 ##(20/20 points) Using a data source of your choice, such as data from data.gov or using the Faker package, generate or retrieve some data for creating basic statistics on. This will generally come in as json data, etc.
@@ -26,29 +28,30 @@ import matplotlib.pyplot as plt
 stars = pd.read_csv('stardata.csv', index_col=0)
 
 starData = {
-
-        "Ross 154" : "gold" ,
-        "Barnard's Star" : "crimson" ,
-        "Wolf 359" : "magenta" ,
-        "Lalande 21185" : "purple"
+        "Ross 154" : "SeaGreen" ,
+        "Barnard's Star" : "LightSkyBlue" ,
+        "Wolf 359" : "Maroon" ,
+        "Lalande 21185" : "LightCoral"
         }
 
 for starName, color in starData.items():
     star = stars.loc[starName]
-    plt.scatter(star["Distance (ly)"], star["Radius (R/Ro)"], marker = "*", color = color, label = starName)
+    plt.scatter(star["Distance (ly)"], star["Radius (R/Ro)"], marker = "*", color = color, edgecolor = 'black' , label = starName, s= 100)
 
-plt.title("Changing Radius of Stars Across Distances")
-plt.xlabel("Distance from Earth in Light-Years")
-plt.ylabel("Radius of Star Relative to Sun's Radius")
+plt.title("Changing Radius of Stars Across Distances" , fontweight = 'bold')
+plt.xlabel("Distance from Earth in Light-Years" , fontweight = 'bold')
+plt.ylabel("Radius of Star Relative to Sun's Radius" , fontweight = 'bold')
 plt.legend(fontsize ="small" , loc="upper right")
+plt.savefig("charts/stardata.png")
 plt.show()
 
 starClassCounts = stars["Spectral Class"].value_counts()
-
-plt.title("Amount of Stars in Star Classes")
-plt.bar(starClassCounts.index, starClassCounts.values)
-plt.xlabel('Spectral Class')
-plt.ylabel('Count')
-plt.xticks(fontsize = 6 , rotation=90)
+plt.title("Number of Stars in Spectral Classes" , fontweight = 'bold')
+plt.bar(starClassCounts.index, starClassCounts.values, color = 'CornflowerBlue' , edgecolor = 'black')
+plt.xlabel('Class' , fontweight = 'bold')
+plt.ylabel('Star Count', fontweight = 'bold')
+plt.xticks(fontsize = 7 , rotation=90)
 plt.grid(True, axis="y", linestyle = "--", alpha = 0.5)
+plt.tight_layout()
+plt.savefig("charts/starClassCounts.png")
 plt.show()
