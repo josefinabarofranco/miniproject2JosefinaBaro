@@ -1,5 +1,5 @@
 ### INF601 - Advanced Programming in Python
-### Josefina Baro
+### Josefina Baro Franco
 ### Mini Project 2
 
 
@@ -8,6 +8,7 @@
 ## Description
 
 This project will be using a 'Stars Dataset' from Kaggle.com
+
 https://www.kaggle.com/datasets/waqi786/stars-dataset?resource=download
 
 ## Getting Started
@@ -26,7 +27,9 @@ python main.py
 ### Output
 
 This should create graphs that have different information about stars.
-Graph one shows the Changing Radius of 4 different Stars Across Varying Distances
+
+Graph one shows the Changing Radius of 4 different Stars Across Varying Distances.
+
 Graph two shows classifications of stars, and it shows how many stars are in each class
 ```
 
