@@ -44,3 +44,4 @@ ex. Josefina Baro
 Inspiration, code snippets, etc.
 *[Kaggle - Stars Dataset](https://www.kaggle.com/datasets/waqi786/stars-dataset?resource=download)
 *[matplotlib](https://matplotlib.org/stable/plot_types/index.html)
+*(https://www.geeksforgeeks.org/python-pandas-dataframe-groupby/)

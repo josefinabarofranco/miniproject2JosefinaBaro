@@ -15,7 +15,7 @@ os.makedirs("charts", exist_ok=True)
 #######      dtype='object')
 
 stars = pd.read_csv('stardata.csv', index_col=0)
-
+#chose 4 stars to show data for and assigned a color to each
 starData = {
         "Ross 154" : "SeaGreen" ,
         "Barnard's Star" : "LightSkyBlue" ,
@@ -45,5 +45,12 @@ plt.tight_layout()
 plt.savefig("charts/starClassCounts.png")
 plt.show()
 
-#starTemps = stars["Temperature (K)"].mean()
-#plt.plot(stars[''])
+plt.hist2d(stars["Distance (ly)"], stars["Temperature (K)"], bins=50, cmap= "plasma")
+plt.title("Average Star Temperatures in Kelvin by Distance" , fontweight = 'bold')
+plt.xlim(0,900)
+plt.xlabel("Distance from Earth in Light-Years" , fontweight = 'bold')
+plt.ylim(2750,16000)
+plt.ylabel("Temperature (K)" , fontweight = 'bold')
+plt.colorbar(label= "Number of Stars")
+plt.tight_layout()
+plt.show()
