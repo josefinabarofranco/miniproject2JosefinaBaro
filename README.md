@@ -8,6 +8,7 @@
 ## Description
 
 This project will be using a 'Stars Dataset' from Kaggle.com
+Packages used include matplotlib and pandas.
 
 https://www.kaggle.com/datasets/waqi786/stars-dataset?resource=download
 
@@ -31,7 +32,7 @@ python main.py
 
 ### Output
 
-This project creates 3 graphs that have different information about stars.
+This project creates 3 graphs that have different information about stars. The graphs will be created in a charts folder.
 
 Graph one shows the Changing Radius of 4 different Stars Across Varying Distances.
 
